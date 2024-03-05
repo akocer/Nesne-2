@@ -50,6 +50,7 @@ namespace uyg01
             db.SaveChanges();
             GetProductList();
             MessageBox.Show("Kayýt Eklendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnClean.PerformClick();
         }
 
         private void dgProducts_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -78,6 +79,7 @@ namespace uyg01
             db.SaveChanges();
             GetProductList();
             MessageBox.Show("Kayýt Düzenlendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnClean.PerformClick();
         }
 
         private void btnDelete_Click(object sender, EventArgs e)
@@ -95,10 +97,30 @@ namespace uyg01
 
             var id = Convert.ToInt32(txtId.Text);
             var product = db.Products.Where(s => s.Id == id).SingleOrDefault();
-            db.Products.Remove(product);
-            db.SaveChanges();
-            GetProductList();
-            MessageBox.Show("Kayýt Silindi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+
+
+            if (product != null)
+            {
+                db.Products.Remove(product);
+                db.SaveChanges();
+                GetProductList();
+                MessageBox.Show("Kayýt Silindi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            btnClean.PerformClick();
+
+        }
+
+        private void btnClean_Click(object sender, EventArgs e)
+        {
+            txtId.Clear();
+            txtName.Clear();
+            txtPrice.Clear();
+
+        }
+
+        private void btnClose_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
         }
     }
 }

@@ -42,6 +42,7 @@
             btnUpdate = new Button();
             btnClose = new Button();
             btnDelete = new Button();
+            btnClean = new Button();
             ((System.ComponentModel.ISupportInitialize)dgProducts).BeginInit();
             SuspendLayout();
             // 
@@ -156,12 +157,13 @@
             // 
             // btnClose
             // 
-            btnClose.Location = new Point(906, 226);
+            btnClose.Location = new Point(722, 279);
             btnClose.Name = "btnClose";
-            btnClose.Size = new Size(178, 47);
+            btnClose.Size = new Size(362, 47);
             btnClose.TabIndex = 8;
             btnClose.Text = "Kapat";
             btnClose.UseVisualStyleBackColor = true;
+            btnClose.Click += btnClose_Click;
             // 
             // btnDelete
             // 
@@ -173,11 +175,22 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
+            // btnClean
+            // 
+            btnClean.Location = new Point(906, 226);
+            btnClean.Name = "btnClean";
+            btnClean.Size = new Size(178, 47);
+            btnClean.TabIndex = 10;
+            btnClean.Text = "Temizle";
+            btnClean.UseVisualStyleBackColor = true;
+            btnClean.Click += btnClean_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1143, 462);
+            Controls.Add(btnClean);
             Controls.Add(btnClose);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
@@ -214,5 +227,6 @@
         private Button btnUpdate;
         private Button btnClose;
         private Button btnDelete;
+        private Button btnClean;
     }
 }
