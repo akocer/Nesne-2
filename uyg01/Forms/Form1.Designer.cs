@@ -171,6 +171,7 @@
             btnDelete.TabIndex = 9;
             btnDelete.Text = "Sil";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Form1
             // 

@@ -79,5 +79,26 @@ namespace uyg01
             GetProductList();
             MessageBox.Show("Kayýt Düzenlendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Kayýt Seçiniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            if (MessageBox.Show("Kayýt Silinecek Onaylýyor musunuz?", "Onay", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.No)
+            {
+                return;
+            }
+
+            var id = Convert.ToInt32(txtId.Text);
+            var product = db.Products.Where(s => s.Id == id).SingleOrDefault();
+            db.Products.Remove(product);
+            db.SaveChanges();
+            GetProductList();
+            MessageBox.Show("Kayýt Silindi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
     }
 }
