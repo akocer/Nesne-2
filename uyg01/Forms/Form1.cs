@@ -22,12 +22,12 @@ namespace uyg01
             var products = db.Products.ToList();
             foreach (var product in products)
             {
-                dgProducts.Rows.Add(product.Id, product.Name, product.Price);
+                dgProducts.Rows.Add(product.Id, product.Name, product.Price, product.Description);
             }
         }
         private void btnSave_Click(object sender, EventArgs e)
         {
-            if (txtName.Text == "" || txtPrice.Text == "")
+            if (txtName.Text == "" || txtPrice.Text == "" || txtDescription.Text == "")
             {
                 MessageBox.Show("Tüm Alanlarý Doldurunuz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -43,7 +43,8 @@ namespace uyg01
             var product = new Product()
             {
                 Name = txtName.Text,
-                Price = Convert.ToDouble(txtPrice.Text)
+                Price = Convert.ToDouble(txtPrice.Text),
+                Description = txtDescription.Text
 
             };
             db.Products.Add(product);
@@ -58,12 +59,13 @@ namespace uyg01
             txtId.Text = dgProducts.CurrentRow.Cells[0].Value.ToString();
             txtName.Text = dgProducts.CurrentRow.Cells[1].Value.ToString();
             txtPrice.Text = dgProducts.CurrentRow.Cells[2].Value.ToString();
+            txtDescription.Text = dgProducts.CurrentRow.Cells[3].Value.ToString();
 
         }
 
         private void btnUpdate_Click(object sender, EventArgs e)
         {
-            if (txtId.Text == "" || txtName.Text == "" || txtPrice.Text == "")
+            if (txtId.Text == "" || txtName.Text == "" || txtPrice.Text == "" || txtDescription.Text == "")
             {
                 MessageBox.Show("Kayýt Seçiniz ve Tüm Alanlarý Doldurunuz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
@@ -74,6 +76,7 @@ namespace uyg01
 
             product.Name = txtName.Text;
             product.Price = price;
+            product.Description = txtDescription.Text;
 
             db.Products.Update(product);
             db.SaveChanges();
