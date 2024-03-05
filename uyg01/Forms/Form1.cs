@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore.SqlServer.Query.Internal;
 using uyg01.Models;
 
 namespace uyg01
@@ -32,6 +33,13 @@ namespace uyg01
                 return;
             }
 
+            if (db.Products.Count(c => c.Name == txtName.Text) > 0)
+            {
+                MessageBox.Show("Girilen Ürün Adý Kayýtlýdýr!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+
+            }
+
             var product = new Product()
             {
                 Name = txtName.Text,
@@ -42,6 +50,34 @@ namespace uyg01
             db.SaveChanges();
             GetProductList();
             MessageBox.Show("Kayýt Eklendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dgProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dgProducts.CurrentRow.Cells[0].Value.ToString();
+            txtName.Text = dgProducts.CurrentRow.Cells[1].Value.ToString();
+            txtPrice.Text = dgProducts.CurrentRow.Cells[2].Value.ToString();
+
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "" || txtName.Text == "" || txtPrice.Text == "")
+            {
+                MessageBox.Show("Kayýt Seçiniz ve Tüm Alanlarý Doldurunuz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+            var id = Convert.ToInt32(txtId.Text);
+            var price = Convert.ToDouble(txtPrice.Text);
+            var product = db.Products.Where(s => s.Id == id).SingleOrDefault();
+
+            product.Name = txtName.Text;
+            product.Price = price;
+
+            db.Products.Update(product);
+            db.SaveChanges();
+            GetProductList();
+            MessageBox.Show("Kayýt Düzenlendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

@@ -59,6 +59,7 @@
             dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgProducts.Size = new Size(635, 401);
             dgProducts.TabIndex = 0;
+            dgProducts.CellClick += dgProducts_CellClick;
             // 
             // Column1
             // 
@@ -151,6 +152,7 @@
             btnUpdate.TabIndex = 7;
             btnUpdate.Text = "Düzenle";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnClose
             // 
