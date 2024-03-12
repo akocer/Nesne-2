@@ -11,13 +11,13 @@ namespace uyg02
         AppDbContext db = new AppDbContext();
         private void Form1_Load(object sender, EventArgs e)
         {
-            CategoryList();
+            GetCategoryList();
         }
 
-        void CategoryList()
+        void GetCategoryList()
         {
             var categories = db.Categories.ToList();
-
+            dgCategories.Rows.Clear();
             foreach (var category in categories)
             {
                 dgCategories.Rows.Add(category.Id, category.Name);
@@ -41,9 +41,38 @@ namespace uyg02
             category.Name = txtName.Text;
             db.Categories.Add(category);
             db.SaveChanges();
-            CategoryList();
+            GetCategoryList();
             MessageBox.Show("Kategori Eklendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
 
+        }
+
+        private void dgCategories_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dgCategories.CurrentRow.Cells[0].Value.ToString();
+            txtName.Text = dgCategories.CurrentRow.Cells[1].Value.ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtName.Text == "" || txtId.Text == "")
+            {
+                MessageBox.Show("Kategori Seçiniz ve Kategori Adý Giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var id = Convert.ToInt32(txtId.Text);
+            var category = db.Categories.Where(s => s.Id == id).SingleOrDefault();
+            if (category == null)
+            {
+                MessageBox.Show("Kategori Bulunamadý!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            category.Name = txtName.Text;
+            db.Categories.Update(category);
+            db.SaveChanges();
+            GetCategoryList();
+            MessageBox.Show("Kategori Düzenlendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
         }
     }
 }

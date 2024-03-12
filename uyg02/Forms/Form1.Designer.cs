@@ -56,6 +56,7 @@
             dgCategories.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgCategories.Size = new Size(361, 290);
             dgCategories.TabIndex = 0;
+            dgCategories.CellClick += dgCategories_CellClick;
             // 
             // Column1
             // 
@@ -124,6 +125,7 @@
             btnUpdate.TabIndex = 5;
             btnUpdate.Text = "Düzenle";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnClear
             // 
