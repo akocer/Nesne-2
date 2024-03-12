@@ -43,7 +43,7 @@ namespace uyg02
             db.SaveChanges();
             GetCategoryList();
             MessageBox.Show("Kategori Eklendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
-
+            btnClear.PerformClick();
         }
 
         private void dgCategories_CellClick(object sender, DataGridViewCellEventArgs e)
@@ -56,7 +56,7 @@ namespace uyg02
         {
             if (txtName.Text == "" || txtId.Text == "")
             {
-                MessageBox.Show("Kategori Seçiniz ve Kategori Adý Giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                MessageBox.Show("Kategori Seçiniz veya Kategori Adý Giriniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
 
@@ -73,6 +73,37 @@ namespace uyg02
             db.SaveChanges();
             GetCategoryList();
             MessageBox.Show("Kategori Düzenlendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnClear.PerformClick();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Kategori Seçiniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var id = Convert.ToInt32(txtId.Text);
+            var category = db.Categories.Where(s => s.Id == id).SingleOrDefault();
+            if (category == null)
+            {
+                MessageBox.Show("Kategori Bulunamadý!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+
+            db.Categories.Remove(category);
+            db.SaveChanges();
+            GetCategoryList();
+            MessageBox.Show("Kategori Silindi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnClear.PerformClick();
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtId.Clear();
+            txtName.Clear();
         }
     }
 }

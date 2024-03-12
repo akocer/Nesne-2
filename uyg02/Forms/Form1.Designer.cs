@@ -135,6 +135,7 @@
             btnClear.TabIndex = 6;
             btnClear.Text = "Temizle";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -144,6 +145,7 @@
             btnDelete.TabIndex = 7;
             btnDelete.Text = "Sil";
             btnDelete.UseVisualStyleBackColor = true;
+            btnDelete.Click += btnDelete_Click;
             // 
             // Form1
             // 
