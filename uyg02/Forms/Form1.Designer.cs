@@ -39,15 +39,8 @@
             btnUpdate = new Button();
             btnClear = new Button();
             btnDelete = new Button();
-            cbCategories = new ComboBox();
             label3 = new Label();
-            dgProducts = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
-            Column3 = new DataGridViewTextBoxColumn();
-            btnList = new Button();
             ((System.ComponentModel.ISupportInitialize)dgCategories).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dgProducts).BeginInit();
             SuspendLayout();
             // 
             // dgCategories
@@ -56,7 +49,7 @@
             dgCategories.AllowUserToDeleteRows = false;
             dgCategories.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgCategories.Columns.AddRange(new DataGridViewColumn[] { Column1, Column2 });
-            dgCategories.Location = new Point(45, 35);
+            dgCategories.Location = new Point(26, 95);
             dgCategories.Name = "dgCategories";
             dgCategories.ReadOnly = true;
             dgCategories.RowHeadersWidth = 62;
@@ -85,7 +78,7 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(44, 356);
+            label1.Location = new Point(422, 118);
             label1.Name = "label1";
             label1.Size = new Size(29, 25);
             label1.TabIndex = 1;
@@ -93,7 +86,7 @@
             // 
             // txtId
             // 
-            txtId.Location = new Point(109, 350);
+            txtId.Location = new Point(487, 112);
             txtId.Name = "txtId";
             txtId.ReadOnly = true;
             txtId.Size = new Size(98, 31);
@@ -101,7 +94,7 @@
             // 
             // txtName
             // 
-            txtName.Location = new Point(109, 387);
+            txtName.Location = new Point(487, 149);
             txtName.Name = "txtName";
             txtName.Size = new Size(297, 31);
             txtName.TabIndex = 4;
@@ -109,7 +102,7 @@
             // label2
             // 
             label2.AutoSize = true;
-            label2.Location = new Point(44, 393);
+            label2.Location = new Point(422, 155);
             label2.Name = "label2";
             label2.Size = new Size(41, 25);
             label2.TabIndex = 3;
@@ -117,7 +110,7 @@
             // 
             // btnSave
             // 
-            btnSave.Location = new Point(109, 433);
+            btnSave.Location = new Point(487, 195);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(143, 34);
             btnSave.TabIndex = 5;
@@ -127,7 +120,7 @@
             // 
             // btnUpdate
             // 
-            btnUpdate.Location = new Point(263, 433);
+            btnUpdate.Location = new Point(641, 195);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(143, 34);
             btnUpdate.TabIndex = 5;
@@ -137,7 +130,7 @@
             // 
             // btnClear
             // 
-            btnClear.Location = new Point(263, 473);
+            btnClear.Location = new Point(641, 235);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(143, 34);
             btnClear.TabIndex = 6;
@@ -147,7 +140,7 @@
             // 
             // btnDelete
             // 
-            btnDelete.Location = new Point(109, 473);
+            btnDelete.Location = new Point(487, 235);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(143, 34);
             btnDelete.TabIndex = 7;
@@ -155,80 +148,22 @@
             btnDelete.UseVisualStyleBackColor = true;
             btnDelete.Click += btnDelete_Click;
             // 
-            // cbCategories
-            // 
-            cbCategories.FormattingEnabled = true;
-            cbCategories.Location = new Point(652, 27);
-            cbCategories.Name = "cbCategories";
-            cbCategories.Size = new Size(182, 33);
-            cbCategories.TabIndex = 8;
-            // 
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(487, 35);
+            label3.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label3.Location = new Point(26, 24);
             label3.Name = "label3";
-            label3.Size = new Size(149, 25);
-            label3.TabIndex = 9;
-            label3.Text = "Kategori Seçiniz";
-            // 
-            // dgProducts
-            // 
-            dgProducts.AllowUserToAddRows = false;
-            dgProducts.AllowUserToDeleteRows = false;
-            dgProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dgProducts.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, Column3 });
-            dgProducts.Location = new Point(487, 75);
-            dgProducts.Name = "dgProducts";
-            dgProducts.ReadOnly = true;
-            dgProducts.RowHeadersWidth = 62;
-            dgProducts.RowTemplate.Height = 33;
-            dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgProducts.Size = new Size(583, 250);
-            dgProducts.TabIndex = 10;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Id";
-            dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 50;
-            // 
-            // dataGridViewTextBoxColumn2
-            // 
-            dataGridViewTextBoxColumn2.HeaderText = "Adı";
-            dataGridViewTextBoxColumn2.MinimumWidth = 8;
-            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
-            dataGridViewTextBoxColumn2.ReadOnly = true;
-            dataGridViewTextBoxColumn2.Width = 150;
-            // 
-            // Column3
-            // 
-            Column3.HeaderText = "Fiyatı";
-            Column3.MinimumWidth = 8;
-            Column3.Name = "Column3";
-            Column3.ReadOnly = true;
-            Column3.Width = 150;
-            // 
-            // btnList
-            // 
-            btnList.Location = new Point(840, 27);
-            btnList.Name = "btnList";
-            btnList.Size = new Size(146, 34);
-            btnList.TabIndex = 11;
-            btnList.Text = "Listele";
-            btnList.UseVisualStyleBackColor = true;
+            label3.Size = new Size(234, 54);
+            label3.TabIndex = 8;
+            label3.Text = "Kategoriler";
             // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1166, 597);
-            Controls.Add(btnList);
-            Controls.Add(dgProducts);
+            ClientSize = new Size(948, 461);
             Controls.Add(label3);
-            Controls.Add(cbCategories);
             Controls.Add(btnClear);
             Controls.Add(btnDelete);
             Controls.Add(btnUpdate);
@@ -243,7 +178,6 @@
             Text = "Form1";
             Load += Form1_Load;
             ((System.ComponentModel.ISupportInitialize)dgCategories).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dgProducts).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -261,12 +195,6 @@
         private Button btnUpdate;
         private Button btnClear;
         private Button btnDelete;
-        private ComboBox cbCategories;
         private Label label3;
-        private DataGridView dgProducts;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
-        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
-        private DataGridViewTextBoxColumn Column3;
-        private Button btnList;
     }
 }
