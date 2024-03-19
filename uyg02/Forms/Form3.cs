@@ -35,5 +35,10 @@ namespace uyg02.Forms
             f.Show();
 
         }
+
+        private void btnExit_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

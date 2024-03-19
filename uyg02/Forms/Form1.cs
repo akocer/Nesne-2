@@ -23,9 +23,6 @@ namespace uyg02
                 dgCategories.Rows.Add(category.Id, category.Name);
             }
 
-            //cbCategories.ValueMember = "Id";
-            //cbCategories.DisplayMember = "Name";
-            //cbCategories.DataSource = categories;
         }
 
         private void btnSave_Click(object sender, EventArgs e)

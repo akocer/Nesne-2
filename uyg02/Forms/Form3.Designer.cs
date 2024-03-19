@@ -82,6 +82,7 @@
             btnExit.TabIndex = 2;
             btnExit.Text = "Kapat";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // btnProducts
             // 
