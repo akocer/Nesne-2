@@ -110,6 +110,7 @@
             // 
             // btnSave
             // 
+            btnSave.FlatStyle = FlatStyle.Flat;
             btnSave.Location = new Point(487, 195);
             btnSave.Name = "btnSave";
             btnSave.Size = new Size(143, 34);
@@ -120,6 +121,7 @@
             // 
             // btnUpdate
             // 
+            btnUpdate.FlatStyle = FlatStyle.Flat;
             btnUpdate.Location = new Point(641, 195);
             btnUpdate.Name = "btnUpdate";
             btnUpdate.Size = new Size(143, 34);
@@ -130,6 +132,7 @@
             // 
             // btnClear
             // 
+            btnClear.FlatStyle = FlatStyle.Flat;
             btnClear.Location = new Point(641, 235);
             btnClear.Name = "btnClear";
             btnClear.Size = new Size(143, 34);
@@ -140,6 +143,7 @@
             // 
             // btnDelete
             // 
+            btnDelete.FlatStyle = FlatStyle.Flat;
             btnDelete.Location = new Point(487, 235);
             btnDelete.Name = "btnDelete";
             btnDelete.Size = new Size(143, 34);
@@ -162,7 +166,8 @@
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(948, 461);
+            BackColor = Color.RosyBrown;
+            ClientSize = new Size(1000, 500);
             Controls.Add(label3);
             Controls.Add(btnClear);
             Controls.Add(btnDelete);
@@ -174,6 +179,8 @@
             Controls.Add(label1);
             Controls.Add(dgCategories);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ForeColor = Color.Firebrick;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form1";
             Text = "Form1";
             Load += Form1_Load;

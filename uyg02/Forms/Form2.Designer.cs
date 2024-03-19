@@ -35,14 +35,16 @@
             Column3 = new DataGridViewTextBoxColumn();
             label3 = new Label();
             cbCategories = new ComboBox();
+            label1 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgProducts).BeginInit();
             SuspendLayout();
             // 
             // btnList
             // 
-            btnList.Location = new Point(389, 47);
+            btnList.FlatStyle = FlatStyle.Flat;
+            btnList.Location = new Point(425, 107);
             btnList.Name = "btnList";
-            btnList.Size = new Size(146, 34);
+            btnList.Size = new Size(161, 34);
             btnList.TabIndex = 15;
             btnList.Text = "Listele";
             btnList.UseVisualStyleBackColor = true;
@@ -53,13 +55,13 @@
             dgProducts.AllowUserToDeleteRows = false;
             dgProducts.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgProducts.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn2, Column3 });
-            dgProducts.Location = new Point(36, 95);
+            dgProducts.Location = new Point(36, 155);
             dgProducts.Name = "dgProducts";
             dgProducts.ReadOnly = true;
             dgProducts.RowHeadersWidth = 62;
             dgProducts.RowTemplate.Height = 33;
             dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgProducts.Size = new Size(583, 250);
+            dgProducts.Size = new Size(500, 250);
             dgProducts.TabIndex = 14;
             // 
             // dataGridViewTextBoxColumn1
@@ -89,29 +91,44 @@
             // label3
             // 
             label3.AutoSize = true;
-            label3.Location = new Point(36, 55);
+            label3.Location = new Point(36, 115);
             label3.Name = "label3";
-            label3.Size = new Size(136, 25);
+            label3.Size = new Size(149, 25);
             label3.TabIndex = 13;
             label3.Text = "Kategori Seçiniz";
             // 
             // cbCategories
             // 
             cbCategories.FormattingEnabled = true;
-            cbCategories.Location = new Point(201, 47);
+            cbCategories.Location = new Point(218, 107);
             cbCategories.Name = "cbCategories";
-            cbCategories.Size = new Size(182, 33);
+            cbCategories.Size = new Size(200, 33);
             cbCategories.TabIndex = 12;
+            // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 20F, FontStyle.Bold, GraphicsUnit.Point);
+            label1.Location = new Point(36, 20);
+            label1.Name = "label1";
+            label1.Size = new Size(165, 54);
+            label1.TabIndex = 16;
+            label1.Text = "Ürünler";
             // 
             // Form2
             // 
-            AutoScaleDimensions = new SizeF(10F, 25F);
+            AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(800, 450);
+            BackColor = Color.RosyBrown;
+            ClientSize = new Size(978, 444);
+            Controls.Add(label1);
             Controls.Add(btnList);
             Controls.Add(dgProducts);
             Controls.Add(label3);
             Controls.Add(cbCategories);
+            Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
+            ForeColor = Color.Firebrick;
+            FormBorderStyle = FormBorderStyle.None;
             Name = "Form2";
             Text = "Form2";
             ((System.ComponentModel.ISupportInitialize)dgProducts).EndInit();
@@ -128,5 +145,6 @@
         private DataGridViewTextBoxColumn Column3;
         private Label label3;
         private ComboBox cbCategories;
+        private Label label1;
     }
 }

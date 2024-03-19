@@ -16,5 +16,24 @@ namespace uyg02.Forms
         {
             InitializeComponent();
         }
+
+        private void btnCategories_Click(object sender, EventArgs e)
+        {
+            OpenForm(new Form1());
+        }
+
+        private void btnProducts_Click(object sender, EventArgs e)
+        {
+            OpenForm(new Form2());
+        }
+
+        void OpenForm(Form f)
+        {
+            panel3.Controls.Clear();
+            f.TopLevel = false;
+            panel3.Controls.Add(f);
+            f.Show();
+
+        }
     }
 }

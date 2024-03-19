@@ -29,12 +29,12 @@
         private void InitializeComponent()
         {
             panel1 = new Panel();
-            panel2 = new Panel();
-            panel3 = new Panel();
             label1 = new Label();
-            btnCategories = new Button();
-            btnProducts = new Button();
+            panel2 = new Panel();
             btnExit = new Button();
+            btnProducts = new Button();
+            btnCategories = new Button();
+            panel3 = new Panel();
             panel1.SuspendLayout();
             panel2.SuspendLayout();
             SuspendLayout();
@@ -49,27 +49,6 @@
             panel1.Size = new Size(1417, 102);
             panel1.TabIndex = 0;
             // 
-            // panel2
-            // 
-            panel2.BackColor = Color.Firebrick;
-            panel2.Controls.Add(btnExit);
-            panel2.Controls.Add(btnProducts);
-            panel2.Controls.Add(btnCategories);
-            panel2.Dock = DockStyle.Left;
-            panel2.Location = new Point(0, 102);
-            panel2.Name = "panel2";
-            panel2.Size = new Size(262, 454);
-            panel2.TabIndex = 1;
-            // 
-            // panel3
-            // 
-            panel3.BackColor = Color.RosyBrown;
-            panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(262, 102);
-            panel3.Name = "panel3";
-            panel3.Size = new Size(1155, 454);
-            panel3.TabIndex = 2;
-            // 
             // label1
             // 
             label1.AutoSize = true;
@@ -81,27 +60,17 @@
             label1.TabIndex = 0;
             label1.Text = "Ürün Takip Modülü";
             // 
-            // btnCategories
+            // panel2
             // 
-            btnCategories.FlatStyle = FlatStyle.Flat;
-            btnCategories.ForeColor = Color.White;
-            btnCategories.Location = new Point(12, 36);
-            btnCategories.Name = "btnCategories";
-            btnCategories.Size = new Size(244, 55);
-            btnCategories.TabIndex = 0;
-            btnCategories.Text = "Kategoriler";
-            btnCategories.UseVisualStyleBackColor = true;
-            // 
-            // btnProducts
-            // 
-            btnProducts.FlatStyle = FlatStyle.Flat;
-            btnProducts.ForeColor = Color.White;
-            btnProducts.Location = new Point(12, 97);
-            btnProducts.Name = "btnProducts";
-            btnProducts.Size = new Size(244, 55);
-            btnProducts.TabIndex = 1;
-            btnProducts.Text = "Ürünler";
-            btnProducts.UseVisualStyleBackColor = true;
+            panel2.BackColor = Color.Firebrick;
+            panel2.Controls.Add(btnExit);
+            panel2.Controls.Add(btnProducts);
+            panel2.Controls.Add(btnCategories);
+            panel2.Dock = DockStyle.Left;
+            panel2.Location = new Point(0, 102);
+            panel2.Name = "panel2";
+            panel2.Size = new Size(262, 536);
+            panel2.TabIndex = 1;
             // 
             // btnExit
             // 
@@ -114,11 +83,44 @@
             btnExit.Text = "Kapat";
             btnExit.UseVisualStyleBackColor = true;
             // 
+            // btnProducts
+            // 
+            btnProducts.FlatStyle = FlatStyle.Flat;
+            btnProducts.ForeColor = Color.White;
+            btnProducts.Location = new Point(12, 97);
+            btnProducts.Name = "btnProducts";
+            btnProducts.Size = new Size(244, 55);
+            btnProducts.TabIndex = 1;
+            btnProducts.Text = "Ürünler";
+            btnProducts.UseVisualStyleBackColor = true;
+            btnProducts.Click += btnProducts_Click;
+            // 
+            // btnCategories
+            // 
+            btnCategories.FlatStyle = FlatStyle.Flat;
+            btnCategories.ForeColor = Color.White;
+            btnCategories.Location = new Point(12, 36);
+            btnCategories.Name = "btnCategories";
+            btnCategories.Size = new Size(244, 55);
+            btnCategories.TabIndex = 0;
+            btnCategories.Text = "Kategoriler";
+            btnCategories.UseVisualStyleBackColor = true;
+            btnCategories.Click += btnCategories_Click;
+            // 
+            // panel3
+            // 
+            panel3.BackColor = Color.RosyBrown;
+            panel3.Dock = DockStyle.Fill;
+            panel3.Location = new Point(262, 102);
+            panel3.Name = "panel3";
+            panel3.Size = new Size(1155, 536);
+            panel3.TabIndex = 2;
+            // 
             // Form3
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1417, 556);
+            ClientSize = new Size(1417, 638);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
