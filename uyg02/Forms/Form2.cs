@@ -107,5 +107,28 @@ namespace uyg02.Forms
             }
 
         }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Lütfen Kayıt Seçiniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var id = Convert.ToInt32(txtId.Text);
+
+            var product = db.Products.Where(s => s.Id == id).SingleOrDefault();
+            if (product != null)
+            {
+
+                db.Products.Remove(product);
+                db.SaveChanges();
+
+                MessageBox.Show("Ürün Silindi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnList.PerformClick();
+                btnClear.PerformClick();
+            }
+        }
     }
 }
