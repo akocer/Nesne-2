@@ -58,6 +58,7 @@
             btnList.TabIndex = 15;
             btnList.Text = "Listele";
             btnList.UseVisualStyleBackColor = true;
+            btnList.Click += btnList_Click;
             // 
             // dgProducts
             // 
@@ -73,6 +74,7 @@
             dgProducts.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgProducts.Size = new Size(500, 250);
             dgProducts.TabIndex = 14;
+            dgProducts.CellClick += dgProducts_CellClick;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -134,6 +136,7 @@
             btnClear.TabIndex = 23;
             btnClear.Text = "Temizle";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -154,6 +157,7 @@
             btnUpdate.TabIndex = 21;
             btnUpdate.Text = "Düzenle";
             btnUpdate.UseVisualStyleBackColor = true;
+            btnUpdate.Click += btnUpdate_Click;
             // 
             // btnSave
             // 

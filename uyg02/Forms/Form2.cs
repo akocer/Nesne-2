@@ -50,6 +50,62 @@ namespace uyg02.Forms
             db.SaveChanges();
 
             MessageBox.Show("Ürün Eklendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnList.PerformClick();
+            btnClear.PerformClick();
+        }
+
+        private void btnList_Click(object sender, EventArgs e)
+        {
+            var catId = Convert.ToInt32(cbCategories.SelectedValue);
+
+            var products = db.Products.Where(s => s.CategoryId == catId).ToList();
+            dgProducts.Rows.Clear();
+            foreach (var product in products)
+            {
+                dgProducts.Rows.Add(product.Id, product.Name, product.Price);
+            }
+
+        }
+
+        private void btnClear_Click(object sender, EventArgs e)
+        {
+            txtId.Clear();
+            txtName.Clear();
+            txtPrice.Clear();
+        }
+
+        private void dgProducts_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dgProducts.CurrentRow.Cells[0].Value.ToString();
+            txtName.Text = dgProducts.CurrentRow.Cells[1].Value.ToString();
+            txtPrice.Text = dgProducts.CurrentRow.Cells[2].Value.ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "" || txtName.Text == "" || txtPrice.Text == "")
+            {
+                MessageBox.Show("Lütfen Kayıt Seçiniz ve Tüm Alanları Doldurunuz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var id = Convert.ToInt32(txtId.Text);
+
+            var product = db.Products.Where(s => s.Id == id).SingleOrDefault();
+            if (product != null)
+            {
+                product.Name = txtName.Text;
+                product.Price = Convert.ToDouble(txtPrice.Text);
+                product.CategoryId = Convert.ToInt32(cbCategories.SelectedValue);
+
+                db.Products.Update(product);
+                db.SaveChanges();
+
+                MessageBox.Show("Ürün Düzenlendi", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                btnList.PerformClick();
+                btnClear.PerformClick();
+            }
+
         }
     }
 }
