@@ -11,5 +11,13 @@ namespace uyg03
         {
 
         }
+        void OpenForm(Form f)
+        {
+            panel3.Controls.Clear();
+            f.TopLevel = false;
+            panel3.Controls.Add(f);
+            f.Show();
+
+        }
     }
 }
