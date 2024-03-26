@@ -20,5 +20,7 @@ namespace uyg03.Models
         public int Credit { get; set; }
         public DateTime Created { get; set; }
         public DateTime Updated { get; set; }
+
+
     }
 }

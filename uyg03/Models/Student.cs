@@ -28,5 +28,7 @@ namespace uyg03.Models
         public string Phone { get; set; }
         public DateTime Created { get; set; }
         public DateTime Updated { get; set; }
+
+
     }
 }
