@@ -73,9 +73,9 @@
             dgStudent.ReadOnly = true;
             dgStudent.RowHeadersWidth = 62;
             dgStudent.RowTemplate.Height = 33;
+            dgStudent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgStudent.Size = new Size(697, 412);
             dgStudent.TabIndex = 2;
-            dgStudent.CellContentClick += dataGridView1_CellContentClick;
             // 
             // Column1
             // 
@@ -208,6 +208,7 @@
             btnClear.TabIndex = 27;
             btnClear.Text = "Temizle";
             btnClear.UseVisualStyleBackColor = true;
+            btnClear.Click += btnClear_Click;
             // 
             // btnDelete
             // 
@@ -238,6 +239,7 @@
             btnSave.TabIndex = 26;
             btnSave.Text = "Kaydet";
             btnSave.UseVisualStyleBackColor = true;
+            btnSave.Click += btnSave_Click;
             // 
             // FrmStudent
             // 
@@ -266,6 +268,7 @@
             FormBorderStyle = FormBorderStyle.None;
             Name = "FrmStudent";
             Text = "FrmStudent";
+            Load += FrmStudent_Load;
             ((System.ComponentModel.ISupportInitialize)dgStudent).EndInit();
             ResumeLayout(false);
             PerformLayout();
