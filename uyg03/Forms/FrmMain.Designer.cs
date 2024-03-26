@@ -1,6 +1,6 @@
 ﻿namespace uyg03
 {
-    partial class Form1
+    partial class FrmMain
     {
         /// <summary>
         ///  Required designer variable.
@@ -64,6 +64,7 @@
             btnExit.TabIndex = 2;
             btnExit.Text = "Çıkış";
             btnExit.UseVisualStyleBackColor = true;
+            btnExit.Click += btnExit_Click;
             // 
             // btnRegister
             // 
@@ -76,6 +77,7 @@
             btnRegister.TabIndex = 2;
             btnRegister.Text = "Kayıt";
             btnRegister.UseVisualStyleBackColor = true;
+            btnRegister.Click += btnRegister_Click;
             // 
             // btnLesson
             // 
@@ -88,6 +90,7 @@
             btnLesson.TabIndex = 2;
             btnLesson.Text = "Dersler";
             btnLesson.UseVisualStyleBackColor = true;
+            btnLesson.Click += btnLesson_Click;
             // 
             // btnStudent
             // 
@@ -100,6 +103,7 @@
             btnStudent.TabIndex = 1;
             btnStudent.Text = "Öğrenciler";
             btnStudent.UseVisualStyleBackColor = true;
+            btnStudent.Click += btnStudent_Click;
             // 
             // panel2
             // 
@@ -126,21 +130,21 @@
             // 
             panel3.BackColor = Color.DeepSkyBlue;
             panel3.Dock = DockStyle.Fill;
-            panel3.Location = new Point(296, 0);
+            panel3.Location = new Point(296, 108);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1160, 691);
+            panel3.Size = new Size(1160, 583);
             panel3.TabIndex = 2;
             // 
-            // Form1
+            // FrmMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1456, 691);
-            Controls.Add(panel2);
             Controls.Add(panel3);
+            Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
-            Name = "Form1";
+            Name = "FrmMain";
             Text = "Form1";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
