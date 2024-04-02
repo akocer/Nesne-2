@@ -26,6 +26,11 @@ namespace uyg03.Forms
                 MessageBox.Show("Lütfen Tüm Alanları Doldurunuz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 return;
             }
+            if (db.Students.Count(c => c.Number == txtNumber.Text) > 0)
+            {
+                MessageBox.Show("Girilen Öğrenci Numarası Kayıtlıdır!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
             var student = new Student();
             student.Name = txtName.Text;
             student.Email = txtEmail.Text;
@@ -37,6 +42,7 @@ namespace uyg03.Forms
             db.SaveChanges();
             MessageBox.Show("Öğrenci Eklendi!", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
             GetStudentList();
+            btnClear.PerformClick();
 
         }
         private void FrmStudent_Load(object sender, EventArgs e)
@@ -55,7 +61,74 @@ namespace uyg03.Forms
 
         private void btnClear_Click(object sender, EventArgs e)
         {
+            foreach (var c in Controls)
+            {
+                if (c is TextBox)
+                {
+                    (c as TextBox).Clear();
+                }
+            }
+        }
 
+        private void dgStudent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtId.Text = dgStudent.CurrentRow.Cells[0].Value.ToString();
+            txtNumber.Text = dgStudent.CurrentRow.Cells[1].Value.ToString();
+            txtName.Text = dgStudent.CurrentRow.Cells[2].Value.ToString();
+            txtEmail.Text = dgStudent.CurrentRow.Cells[3].Value.ToString();
+            txtPhone.Text = dgStudent.CurrentRow.Cells[4].Value.ToString();
+        }
+
+        private void btnUpdate_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "" || txtNumber.Text == "" || txtName.Text == "" || txtEmail.Text == "" || txtPhone.Text == "")
+            {
+                MessageBox.Show("Lütfen Kayıt Seçiniz ve Tüm Alanları Doldurunuz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var id = Convert.ToInt32(txtId.Text);
+            var student = db.Students.Where(s => s.Id == id).SingleOrDefault();
+            if (student == null)
+            {
+                MessageBox.Show("Kayıt Bulunamadı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            student.Name = txtName.Text;
+            student.Email = txtEmail.Text;
+            student.Phone = txtPhone.Text;
+            student.Number = txtNumber.Text;
+            student.Updated = DateTime.Now;
+            db.Students.Update(student);
+            db.SaveChanges();
+            MessageBox.Show("Öğrenci Güncellendi!", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            GetStudentList();
+            btnClear.PerformClick();
+        }
+
+        private void btnDelete_Click(object sender, EventArgs e)
+        {
+            if (txtId.Text == "")
+            {
+                MessageBox.Show("Lütfen Kayıt Seçiniz!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            var id = Convert.ToInt32(txtId.Text);
+            var student = db.Students.Where(s => s.Id == id).SingleOrDefault();
+            if (student == null)
+            {
+                MessageBox.Show("Kayıt Bulunamadı!", "Hata", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
+
+            db.Students.Remove(student);
+            db.SaveChanges();
+            MessageBox.Show("Öğrenci Silindi!", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            GetStudentList();
+            btnClear.PerformClick();
         }
     }
+
 }
