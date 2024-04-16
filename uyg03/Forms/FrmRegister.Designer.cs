@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             dgLesson = new DataGridView();
             Column1 = new DataGridViewTextBoxColumn();
             Column2 = new DataGridViewTextBoxColumn();
@@ -52,6 +53,8 @@
             dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            contextMenuStrip1 = new ContextMenuStrip(components);
+            removeStudent = new ToolStripMenuItem();
             dgStudentLesson = new DataGridView();
             dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
@@ -60,6 +63,7 @@
             ((System.ComponentModel.ISupportInitialize)dgLesson).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgStudent).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgLessonStudent).BeginInit();
+            contextMenuStrip1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgStudentLesson).BeginInit();
             SuspendLayout();
             // 
@@ -239,6 +243,7 @@
             dgLessonStudent.AllowUserToDeleteRows = false;
             dgLessonStudent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgLessonStudent.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9 });
+            dgLessonStudent.ContextMenuStrip = contextMenuStrip1;
             dgLessonStudent.Location = new Point(40, 354);
             dgLessonStudent.Name = "dgLessonStudent";
             dgLessonStudent.ReadOnly = true;
@@ -288,6 +293,20 @@
             dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
             dataGridViewTextBoxColumn9.ReadOnly = true;
             dataGridViewTextBoxColumn9.Width = 150;
+            // 
+            // contextMenuStrip1
+            // 
+            contextMenuStrip1.ImageScalingSize = new Size(24, 24);
+            contextMenuStrip1.Items.AddRange(new ToolStripItem[] { removeStudent });
+            contextMenuStrip1.Name = "contextMenuStrip1";
+            contextMenuStrip1.Size = new Size(275, 69);
+            // 
+            // removeStudent
+            // 
+            removeStudent.Name = "removeStudent";
+            removeStudent.Size = new Size(274, 32);
+            removeStudent.Text = "Dersten Öğrenciyi  Çıkar";
+            removeStudent.Click += removeStudent_Click;
             // 
             // dgStudentLesson
             // 
@@ -363,6 +382,7 @@
             ((System.ComponentModel.ISupportInitialize)dgLesson).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgStudent).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgLessonStudent).EndInit();
+            contextMenuStrip1.ResumeLayout(false);
             ((System.ComponentModel.ISupportInitialize)dgStudentLesson).EndInit();
             ResumeLayout(false);
             PerformLayout();
@@ -399,5 +419,7 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
+        private ContextMenuStrip contextMenuStrip1;
+        private ToolStripMenuItem removeStudent;
     }
 }
