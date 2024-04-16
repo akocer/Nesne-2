@@ -95,5 +95,17 @@ namespace uyg03.Forms
             }
 
         }
+
+        private void dgStudent_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var studentId = Convert.ToInt32(dgStudent.CurrentRow.Cells[0].Value.ToString());
+            var registers = db.Registers.Where(s => s.StudentId == studentId).ToList();
+            dgStudentLesson.Rows.Clear();
+            foreach (var register in registers)
+            {
+                dgStudentLesson.Rows.Add(register.Id, register.Lesson.Code, register.Lesson.Name, register.Lesson.Credit);
+            }
+
+        }
     }
 }
