@@ -46,8 +46,21 @@
             label4 = new Label();
             txtSearchStudent = new TextBox();
             btnRegister = new Button();
+            dgLessonStudent = new DataGridView();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn8 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn9 = new DataGridViewTextBoxColumn();
+            dgStudentLesson = new DataGridView();
+            dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn11 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn12 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn13 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgLesson).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgStudent).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgLessonStudent).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgStudentLesson).BeginInit();
             SuspendLayout();
             // 
             // dgLesson
@@ -62,8 +75,9 @@
             dgLesson.RowHeadersWidth = 62;
             dgLesson.RowTemplate.Height = 33;
             dgLesson.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgLesson.Size = new Size(551, 412);
+            dgLesson.Size = new Size(551, 265);
             dgLesson.TabIndex = 46;
+            dgLesson.CellClick += dgLesson_CellClick;
             // 
             // Column1
             // 
@@ -120,7 +134,7 @@
             dgStudent.RowHeadersWidth = 62;
             dgStudent.RowTemplate.Height = 33;
             dgStudent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgStudent.Size = new Size(697, 412);
+            dgStudent.Size = new Size(697, 265);
             dgStudent.TabIndex = 48;
             // 
             // dataGridViewTextBoxColumn1
@@ -210,7 +224,7 @@
             // 
             // btnRegister
             // 
-            btnRegister.Location = new Point(40, 501);
+            btnRegister.Location = new Point(40, 634);
             btnRegister.Name = "btnRegister";
             btnRegister.Size = new Size(185, 45);
             btnRegister.TabIndex = 53;
@@ -218,12 +232,118 @@
             btnRegister.UseVisualStyleBackColor = true;
             btnRegister.Click += btnRegister_Click;
             // 
+            // dgLessonStudent
+            // 
+            dgLessonStudent.AllowUserToAddRows = false;
+            dgLessonStudent.AllowUserToDeleteRows = false;
+            dgLessonStudent.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgLessonStudent.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn7, dataGridViewTextBoxColumn8, dataGridViewTextBoxColumn9 });
+            dgLessonStudent.Location = new Point(40, 354);
+            dgLessonStudent.Name = "dgLessonStudent";
+            dgLessonStudent.ReadOnly = true;
+            dgLessonStudent.RowHeadersWidth = 62;
+            dgLessonStudent.RowTemplate.Height = 33;
+            dgLessonStudent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgLessonStudent.Size = new Size(697, 265);
+            dgLessonStudent.TabIndex = 54;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.HeaderText = "Id";
+            dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.Visible = false;
+            dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.HeaderText = "Öğr.No";
+            dataGridViewTextBoxColumn6.MinimumWidth = 8;
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
+            dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.HeaderText = "Adı Soyadı";
+            dataGridViewTextBoxColumn7.MinimumWidth = 8;
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
+            dataGridViewTextBoxColumn7.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn8
+            // 
+            dataGridViewTextBoxColumn8.HeaderText = "E-Posta";
+            dataGridViewTextBoxColumn8.MinimumWidth = 8;
+            dataGridViewTextBoxColumn8.Name = "dataGridViewTextBoxColumn8";
+            dataGridViewTextBoxColumn8.ReadOnly = true;
+            dataGridViewTextBoxColumn8.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn9
+            // 
+            dataGridViewTextBoxColumn9.HeaderText = "Telefon";
+            dataGridViewTextBoxColumn9.MinimumWidth = 8;
+            dataGridViewTextBoxColumn9.Name = "dataGridViewTextBoxColumn9";
+            dataGridViewTextBoxColumn9.ReadOnly = true;
+            dataGridViewTextBoxColumn9.Width = 150;
+            // 
+            // dgStudentLesson
+            // 
+            dgStudentLesson.AllowUserToAddRows = false;
+            dgStudentLesson.AllowUserToDeleteRows = false;
+            dgStudentLesson.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgStudentLesson.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn10, dataGridViewTextBoxColumn11, dataGridViewTextBoxColumn12, dataGridViewTextBoxColumn13 });
+            dgStudentLesson.Location = new Point(754, 354);
+            dgStudentLesson.Name = "dgStudentLesson";
+            dgStudentLesson.ReadOnly = true;
+            dgStudentLesson.RowHeadersWidth = 62;
+            dgStudentLesson.RowTemplate.Height = 33;
+            dgStudentLesson.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgStudentLesson.Size = new Size(551, 265);
+            dgStudentLesson.TabIndex = 55;
+            // 
+            // dataGridViewTextBoxColumn10
+            // 
+            dataGridViewTextBoxColumn10.HeaderText = "Id";
+            dataGridViewTextBoxColumn10.MinimumWidth = 8;
+            dataGridViewTextBoxColumn10.Name = "dataGridViewTextBoxColumn10";
+            dataGridViewTextBoxColumn10.ReadOnly = true;
+            dataGridViewTextBoxColumn10.Visible = false;
+            dataGridViewTextBoxColumn10.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn11
+            // 
+            dataGridViewTextBoxColumn11.HeaderText = "Ders Kodu";
+            dataGridViewTextBoxColumn11.MinimumWidth = 8;
+            dataGridViewTextBoxColumn11.Name = "dataGridViewTextBoxColumn11";
+            dataGridViewTextBoxColumn11.ReadOnly = true;
+            dataGridViewTextBoxColumn11.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn12
+            // 
+            dataGridViewTextBoxColumn12.HeaderText = "Ders Adı";
+            dataGridViewTextBoxColumn12.MinimumWidth = 8;
+            dataGridViewTextBoxColumn12.Name = "dataGridViewTextBoxColumn12";
+            dataGridViewTextBoxColumn12.ReadOnly = true;
+            dataGridViewTextBoxColumn12.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn13
+            // 
+            dataGridViewTextBoxColumn13.HeaderText = "Kredi";
+            dataGridViewTextBoxColumn13.MinimumWidth = 8;
+            dataGridViewTextBoxColumn13.Name = "dataGridViewTextBoxColumn13";
+            dataGridViewTextBoxColumn13.ReadOnly = true;
+            dataGridViewTextBoxColumn13.Width = 150;
+            // 
             // FrmRegister
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.DeepSkyBlue;
-            ClientSize = new Size(1331, 652);
+            ClientSize = new Size(1331, 711);
+            Controls.Add(dgStudentLesson);
+            Controls.Add(dgLessonStudent);
             Controls.Add(btnRegister);
             Controls.Add(label4);
             Controls.Add(txtSearchStudent);
@@ -241,6 +361,8 @@
             Load += FrmRegister_Load;
             ((System.ComponentModel.ISupportInitialize)dgLesson).EndInit();
             ((System.ComponentModel.ISupportInitialize)dgStudent).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgLessonStudent).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgStudentLesson).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -265,5 +387,16 @@
         private Label label4;
         private TextBox txtSearchStudent;
         private Button btnRegister;
+        private DataGridView dgLessonStudent;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn8;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn9;
+        private DataGridView dgStudentLesson;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn11;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn12;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn13;
     }
 }

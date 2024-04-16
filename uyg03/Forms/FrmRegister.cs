@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Microsoft.EntityFrameworkCore;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -80,6 +81,19 @@ namespace uyg03.Forms
             db.Registers.Add(register);
             db.SaveChanges();
             MessageBox.Show("Ders Kaydı Yapıldı", "Tamam", MessageBoxButtons.OK, MessageBoxIcon.Information);
+        }
+
+        private void dgLesson_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            var lessonId = Convert.ToInt32(dgLesson.CurrentRow.Cells[0].Value.ToString());
+            var registers = db.Registers.Where(s => s.LessonId == lessonId).ToList();
+
+            dgLessonStudent.Rows.Clear();
+            foreach (var register in registers)
+            {
+                dgLessonStudent.Rows.Add(register.Id, register.Student.Number, register.Student.Name, register.Student.Email, register.Student.Phone);
+            }
+
         }
     }
 }

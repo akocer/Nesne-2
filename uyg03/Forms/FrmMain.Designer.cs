@@ -50,7 +50,7 @@
             panel1.Dock = DockStyle.Left;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(296, 691);
+            panel1.Size = new Size(296, 944);
             panel1.TabIndex = 0;
             // 
             // btnExit
@@ -132,19 +132,20 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(296, 108);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1443, 583);
+            panel3.Size = new Size(1443, 836);
             panel3.TabIndex = 2;
             // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1739, 691);
+            ClientSize = new Size(1739, 944);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);
             Font = new Font("Segoe UI", 9F, FontStyle.Bold, GraphicsUnit.Point);
             Name = "FrmMain";
+            StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             Load += Form1_Load;
             panel1.ResumeLayout(false);
