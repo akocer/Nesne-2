@@ -112,7 +112,7 @@
             panel2.Dock = DockStyle.Top;
             panel2.Location = new Point(296, 0);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1160, 108);
+            panel2.Size = new Size(1443, 108);
             panel2.TabIndex = 1;
             // 
             // label1
@@ -132,14 +132,14 @@
             panel3.Dock = DockStyle.Fill;
             panel3.Location = new Point(296, 108);
             panel3.Name = "panel3";
-            panel3.Size = new Size(1160, 583);
+            panel3.Size = new Size(1443, 583);
             panel3.TabIndex = 2;
             // 
             // FrmMain
             // 
             AutoScaleDimensions = new SizeF(11F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1456, 691);
+            ClientSize = new Size(1739, 691);
             Controls.Add(panel3);
             Controls.Add(panel2);
             Controls.Add(panel1);

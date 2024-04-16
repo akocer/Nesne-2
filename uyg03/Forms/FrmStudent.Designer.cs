@@ -120,6 +120,7 @@
             dgStudent.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
             dgStudent.Size = new Size(697, 412);
             dgStudent.TabIndex = 30;
+            dgStudent.CellClick += dgStudent_CellClick;
             // 
             // dataGridViewTextBoxColumn1
             // 
