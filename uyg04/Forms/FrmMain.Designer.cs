@@ -157,7 +157,6 @@
         #endregion
 
         private Panel panel1;
-        private Panel panel2;
         private Label lbTitle;
         private ToolStrip toolStrip1;
         private ToolStripButton btnWork;
@@ -165,5 +164,6 @@
         private ToolStripButton btnPayment;
         private ToolStripButton btnExit;
         private Label label1;
+        public Panel panel2;
     }
 }

@@ -49,6 +49,12 @@
             label9 = new Label();
             txtPhone = new TextBox();
             label10 = new Label();
+            dgCustomer = new DataGridView();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
+            ((System.ComponentModel.ISupportInitialize)dgCustomer).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -80,6 +86,7 @@
             // 
             txtCustomerId.Location = new Point(148, 80);
             txtCustomerId.Name = "txtCustomerId";
+            txtCustomerId.ReadOnly = true;
             txtCustomerId.Size = new Size(122, 31);
             txtCustomerId.TabIndex = 3;
             // 
@@ -178,6 +185,7 @@
             btnSave.TabIndex = 14;
             btnSave.Text = "Kaydet";
             btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
             // 
             // btnClear
             // 
@@ -191,6 +199,7 @@
             btnClear.TabIndex = 14;
             btnClear.Text = "Temizle";
             btnClear.UseVisualStyleBackColor = false;
+            btnClear.Click += btnClear_Click;
             // 
             // btnSearch
             // 
@@ -204,11 +213,13 @@
             btnSearch.TabIndex = 15;
             btnSearch.Text = "Gözat";
             btnSearch.UseVisualStyleBackColor = false;
+            btnSearch.Click += btnSearch_Click;
             // 
             // txtName
             // 
             txtName.Location = new Point(148, 122);
             txtName.Name = "txtName";
+            txtName.ReadOnly = true;
             txtName.Size = new Size(300, 31);
             txtName.TabIndex = 17;
             // 
@@ -225,6 +236,7 @@
             // 
             txtPhone.Location = new Point(148, 159);
             txtPhone.Name = "txtPhone";
+            txtPhone.ReadOnly = true;
             txtPhone.Size = new Size(300, 31);
             txtPhone.TabIndex = 19;
             // 
@@ -237,12 +249,61 @@
             label10.TabIndex = 18;
             label10.Text = "Telefon";
             // 
+            // dgCustomer
+            // 
+            dgCustomer.AllowUserToAddRows = false;
+            dgCustomer.AllowUserToDeleteRows = false;
+            dgCustomer.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgCustomer.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn1, dataGridViewTextBoxColumn3, dataGridViewTextBoxColumn4, Column5 });
+            dgCustomer.Location = new Point(484, 37);
+            dgCustomer.Name = "dgCustomer";
+            dgCustomer.ReadOnly = true;
+            dgCustomer.RowHeadersWidth = 62;
+            dgCustomer.RowTemplate.Height = 33;
+            dgCustomer.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgCustomer.Size = new Size(697, 412);
+            dgCustomer.TabIndex = 55;
+            dgCustomer.CellClick += dgCustomer_CellClick;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Müşteri No";
+            dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Adı Soyadı";
+            dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "E-Posta";
+            dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Telefon";
+            Column5.MinimumWidth = 8;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 150;
+            // 
             // FrmWork
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1232, 646);
+            Controls.Add(dgCustomer);
             Controls.Add(txtPhone);
             Controls.Add(label10);
             Controls.Add(txtName);
@@ -269,6 +330,7 @@
             Text = "FrmWork";
             WindowState = FormWindowState.Maximized;
             Load += FrmWork_Load;
+            ((System.ComponentModel.ISupportInitialize)dgCustomer).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -278,7 +340,6 @@
         private Label label1;
         private DateTimePicker dtDate;
         private Label label2;
-        private TextBox txtCustomerId;
         private TextBox txtTitle;
         private Label label3;
         private TextBox txtDescription;
@@ -292,9 +353,15 @@
         private Button btnSave;
         private Button btnClear;
         private Button btnSearch;
-        private TextBox txtName;
         private Label label9;
-        private TextBox txtPhone;
         private Label label10;
+        public TextBox txtCustomerId;
+        public TextBox txtName;
+        public TextBox txtPhone;
+        private DataGridView dgCustomer;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn1;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
+        private DataGridViewTextBoxColumn Column5;
     }
 }

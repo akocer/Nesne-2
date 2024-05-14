@@ -37,14 +37,14 @@
             txtId = new TextBox();
             label2 = new Label();
             dgCustomer = new DataGridView();
-            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
-            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
-            Column5 = new DataGridViewTextBoxColumn();
             btnClear = new Button();
             btnDelete = new Button();
             btnUpdate = new Button();
             btnSave = new Button();
+            dataGridViewTextBoxColumn1 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
+            Column5 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgCustomer).BeginInit();
             SuspendLayout();
             // 
@@ -109,9 +109,9 @@
             label2.AutoSize = true;
             label2.Location = new Point(762, 104);
             label2.Name = "label2";
-            label2.Size = new Size(79, 25);
+            label2.Size = new Size(100, 25);
             label2.TabIndex = 55;
-            label2.Text = "Kayıt No";
+            label2.Text = "Müşteri No";
             // 
             // dgCustomer
             // 
@@ -128,38 +128,6 @@
             dgCustomer.Size = new Size(697, 412);
             dgCustomer.TabIndex = 54;
             dgCustomer.CellClick += dgCustomer_CellClick;
-            // 
-            // dataGridViewTextBoxColumn1
-            // 
-            dataGridViewTextBoxColumn1.HeaderText = "Id";
-            dataGridViewTextBoxColumn1.MinimumWidth = 8;
-            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
-            dataGridViewTextBoxColumn1.ReadOnly = true;
-            dataGridViewTextBoxColumn1.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn3
-            // 
-            dataGridViewTextBoxColumn3.HeaderText = "Adı Soyadı";
-            dataGridViewTextBoxColumn3.MinimumWidth = 8;
-            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
-            dataGridViewTextBoxColumn3.ReadOnly = true;
-            dataGridViewTextBoxColumn3.Width = 150;
-            // 
-            // dataGridViewTextBoxColumn4
-            // 
-            dataGridViewTextBoxColumn4.HeaderText = "E-Posta";
-            dataGridViewTextBoxColumn4.MinimumWidth = 8;
-            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
-            dataGridViewTextBoxColumn4.ReadOnly = true;
-            dataGridViewTextBoxColumn4.Width = 150;
-            // 
-            // Column5
-            // 
-            Column5.HeaderText = "Telefon";
-            Column5.MinimumWidth = 8;
-            Column5.Name = "Column5";
-            Column5.ReadOnly = true;
-            Column5.Width = 150;
             // 
             // btnClear
             // 
@@ -216,6 +184,38 @@
             btnSave.Text = "Kaydet";
             btnSave.UseVisualStyleBackColor = false;
             btnSave.Click += btnSave_Click;
+            // 
+            // dataGridViewTextBoxColumn1
+            // 
+            dataGridViewTextBoxColumn1.HeaderText = "Müşteri No";
+            dataGridViewTextBoxColumn1.MinimumWidth = 8;
+            dataGridViewTextBoxColumn1.Name = "dataGridViewTextBoxColumn1";
+            dataGridViewTextBoxColumn1.ReadOnly = true;
+            dataGridViewTextBoxColumn1.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn3
+            // 
+            dataGridViewTextBoxColumn3.HeaderText = "Adı Soyadı";
+            dataGridViewTextBoxColumn3.MinimumWidth = 8;
+            dataGridViewTextBoxColumn3.Name = "dataGridViewTextBoxColumn3";
+            dataGridViewTextBoxColumn3.ReadOnly = true;
+            dataGridViewTextBoxColumn3.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn4
+            // 
+            dataGridViewTextBoxColumn4.HeaderText = "E-Posta";
+            dataGridViewTextBoxColumn4.MinimumWidth = 8;
+            dataGridViewTextBoxColumn4.Name = "dataGridViewTextBoxColumn4";
+            dataGridViewTextBoxColumn4.ReadOnly = true;
+            dataGridViewTextBoxColumn4.Width = 150;
+            // 
+            // Column5
+            // 
+            Column5.HeaderText = "Telefon";
+            Column5.MinimumWidth = 8;
+            Column5.Name = "Column5";
+            Column5.ReadOnly = true;
+            Column5.Width = 150;
             // 
             // FrmCustomer
             // 
