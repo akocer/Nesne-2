@@ -16,5 +16,10 @@ namespace uyg04.Forms
         {
             InitializeComponent();
         }
+
+        private void FrmWork_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

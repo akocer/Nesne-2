@@ -31,11 +31,12 @@
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(FrmMain));
             panel1 = new Panel();
             toolStrip1 = new ToolStrip();
-            toolStripButton1 = new ToolStripButton();
-            toolStripButton2 = new ToolStripButton();
-            toolStripButton3 = new ToolStripButton();
-            toolStripButton4 = new ToolStripButton();
+            btnWork = new ToolStripButton();
+            btnCustomer = new ToolStripButton();
+            btnPayment = new ToolStripButton();
+            btnExit = new ToolStripButton();
             label1 = new Label();
+            lbTitle = new Label();
             panel2 = new Panel();
             panel1.SuspendLayout();
             toolStrip1.SuspendLayout();
@@ -46,71 +47,92 @@
             panel1.BackColor = SystemColors.HotTrack;
             panel1.Controls.Add(toolStrip1);
             panel1.Controls.Add(label1);
+            panel1.Controls.Add(lbTitle);
             panel1.Dock = DockStyle.Top;
             panel1.Location = new Point(0, 0);
             panel1.Name = "panel1";
-            panel1.Size = new Size(1173, 174);
+            panel1.Size = new Size(1173, 221);
             panel1.TabIndex = 0;
             // 
             // toolStrip1
             // 
             toolStrip1.ImageScalingSize = new Size(64, 64);
-            toolStrip1.Items.AddRange(new ToolStripItem[] { toolStripButton1, toolStripButton2, toolStripButton3, toolStripButton4 });
+            toolStrip1.Items.AddRange(new ToolStripItem[] { btnWork, btnCustomer, btnPayment, btnExit });
             toolStrip1.Location = new Point(0, 0);
             toolStrip1.Name = "toolStrip1";
             toolStrip1.Size = new Size(1173, 73);
             toolStrip1.TabIndex = 1;
             toolStrip1.Text = "toolStrip1";
             // 
-            // toolStripButton1
+            // btnWork
             // 
-            toolStripButton1.Image = (Image)resources.GetObject("toolStripButton1.Image");
-            toolStripButton1.ImageTransparentColor = Color.Magenta;
-            toolStripButton1.Name = "toolStripButton1";
-            toolStripButton1.Size = new Size(138, 68);
-            toolStripButton1.Text = "İş Takip";
+            btnWork.ForeColor = SystemColors.HotTrack;
+            btnWork.Image = (Image)resources.GetObject("btnWork.Image");
+            btnWork.ImageTransparentColor = Color.Magenta;
+            btnWork.Name = "btnWork";
+            btnWork.Size = new Size(138, 68);
+            btnWork.Text = "İş Takip";
+            btnWork.Click += btnWork_Click;
             // 
-            // toolStripButton2
+            // btnCustomer
             // 
-            toolStripButton2.Image = (Image)resources.GetObject("toolStripButton2.Image");
-            toolStripButton2.ImageTransparentColor = Color.Magenta;
-            toolStripButton2.Name = "toolStripButton2";
-            toolStripButton2.Size = new Size(158, 68);
-            toolStripButton2.Text = "Müşteriler";
+            btnCustomer.ForeColor = SystemColors.HotTrack;
+            btnCustomer.Image = (Image)resources.GetObject("btnCustomer.Image");
+            btnCustomer.ImageTransparentColor = Color.Magenta;
+            btnCustomer.Name = "btnCustomer";
+            btnCustomer.Size = new Size(158, 68);
+            btnCustomer.Text = "Müşteriler";
+            btnCustomer.Click += btnCustomer_Click;
             // 
-            // toolStripButton3
+            // btnPayment
             // 
-            toolStripButton3.Image = (Image)resources.GetObject("toolStripButton3.Image");
-            toolStripButton3.ImageTransparentColor = Color.Magenta;
-            toolStripButton3.Name = "toolStripButton3";
-            toolStripButton3.Size = new Size(160, 68);
-            toolStripButton3.Text = "Ödeme Al";
+            btnPayment.ForeColor = SystemColors.HotTrack;
+            btnPayment.Image = (Image)resources.GetObject("btnPayment.Image");
+            btnPayment.ImageTransparentColor = Color.Magenta;
+            btnPayment.Name = "btnPayment";
+            btnPayment.Size = new Size(160, 68);
+            btnPayment.Text = "Ödeme Al";
+            btnPayment.Click += btnPayment_Click;
             // 
-            // toolStripButton4
+            // btnExit
             // 
-            toolStripButton4.Image = (Image)resources.GetObject("toolStripButton4.Image");
-            toolStripButton4.ImageTransparentColor = Color.Magenta;
-            toolStripButton4.Name = "toolStripButton4";
-            toolStripButton4.Size = new Size(116, 68);
-            toolStripButton4.Text = "Çıkış";
+            btnExit.ForeColor = SystemColors.HotTrack;
+            btnExit.Image = (Image)resources.GetObject("btnExit.Image");
+            btnExit.ImageTransparentColor = Color.Magenta;
+            btnExit.Name = "btnExit";
+            btnExit.Size = new Size(116, 68);
+            btnExit.Text = "Çıkış";
+            btnExit.Click += btnExit_Click;
             // 
             // label1
             // 
             label1.AutoSize = true;
             label1.Font = new Font("Tahoma", 20F, FontStyle.Bold, GraphicsUnit.Point);
             label1.ForeColor = Color.White;
-            label1.Location = new Point(12, 94);
+            label1.Location = new Point(29, 96);
             label1.Name = "label1";
             label1.Size = new Size(344, 48);
             label1.TabIndex = 0;
             label1.Text = "İş Takip Modülü";
             // 
+            // lbTitle
+            // 
+            lbTitle.AutoSize = true;
+            lbTitle.Font = new Font("Tahoma", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lbTitle.ForeColor = Color.White;
+            lbTitle.Location = new Point(29, 158);
+            lbTitle.Name = "lbTitle";
+            lbTitle.Size = new Size(145, 34);
+            lbTitle.TabIndex = 0;
+            lbTitle.Text = "Alt Başlık";
+            // 
             // panel2
             // 
+            panel2.BackColor = SystemColors.ActiveCaption;
             panel2.Dock = DockStyle.Fill;
-            panel2.Location = new Point(0, 174);
+            panel2.Location = new Point(0, 221);
             panel2.Name = "panel2";
-            panel2.Size = new Size(1173, 444);
+            panel2.Size = new Size(1173, 397);
             panel2.TabIndex = 1;
             // 
             // FrmMain
@@ -124,6 +146,7 @@
             StartPosition = FormStartPosition.CenterScreen;
             Text = "Form1";
             WindowState = FormWindowState.Maximized;
+            Load += FrmMain_Load;
             panel1.ResumeLayout(false);
             panel1.PerformLayout();
             toolStrip1.ResumeLayout(false);
@@ -135,11 +158,12 @@
 
         private Panel panel1;
         private Panel panel2;
-        private Label label1;
+        private Label lbTitle;
         private ToolStrip toolStrip1;
-        private ToolStripButton toolStripButton1;
-        private ToolStripButton toolStripButton2;
-        private ToolStripButton toolStripButton3;
-        private ToolStripButton toolStripButton4;
+        private ToolStripButton btnWork;
+        private ToolStripButton btnCustomer;
+        private ToolStripButton btnPayment;
+        private ToolStripButton btnExit;
+        private Label label1;
     }
 }
