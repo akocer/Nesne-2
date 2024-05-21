@@ -91,5 +91,20 @@ namespace uyg04.Forms
                 lbDiff.ForeColor = Color.Green;
             }
         }
+
+        private void btnSave_Click(object sender, EventArgs e)
+        {
+            int customerId = Convert.ToInt32(dgCustomer.CurrentRow.Cells[0].Value.ToString());
+
+            Payment payment = new Payment();
+
+            payment.CustomerId = customerId;
+            payment.Paid = Convert.ToDouble(txtPaid.Text);
+            payment.CreateDate = dtDate.Value;
+            payment.UpdateDate = dtDate.Value;
+            db.Payments.Add(payment);
+            db.SaveChanges();
+            GetPaymentList(customerId);
+        }
     }
 }

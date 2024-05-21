@@ -50,6 +50,12 @@
             label4 = new Label();
             lbDiff = new Label();
             label5 = new Label();
+            dtDate = new DateTimePicker();
+            label3 = new Label();
+            label7 = new Label();
+            txtPaid = new TextBox();
+            label8 = new Label();
+            btnSave = new Button();
             ((System.ComponentModel.ISupportInitialize)dgWork).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgCustomer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgPayment).BeginInit();
@@ -266,11 +272,72 @@
             label5.TabIndex = 66;
             label5.Text = "Fark";
             // 
+            // dtDate
+            // 
+            dtDate.Location = new Point(633, 662);
+            dtDate.Name = "dtDate";
+            dtDate.Size = new Size(300, 31);
+            dtDate.TabIndex = 69;
+            // 
+            // label3
+            // 
+            label3.AutoSize = true;
+            label3.Location = new Point(521, 668);
+            label3.Name = "label3";
+            label3.Size = new Size(48, 25);
+            label3.TabIndex = 68;
+            label3.Text = "Tarih";
+            // 
+            // label7
+            // 
+            label7.AutoSize = true;
+            label7.Location = new Point(901, 707);
+            label7.Name = "label7";
+            label7.Size = new Size(29, 25);
+            label7.TabIndex = 72;
+            label7.Text = "TL";
+            // 
+            // txtPaid
+            // 
+            txtPaid.Location = new Point(761, 701);
+            txtPaid.Name = "txtPaid";
+            txtPaid.Size = new Size(122, 31);
+            txtPaid.TabIndex = 71;
+            // 
+            // label8
+            // 
+            label8.AutoSize = true;
+            label8.Location = new Point(655, 707);
+            label8.Name = "label8";
+            label8.Size = new Size(71, 25);
+            label8.TabIndex = 70;
+            label8.Text = "Ödeme";
+            // 
+            // btnSave
+            // 
+            btnSave.BackColor = SystemColors.HotTrack;
+            btnSave.FlatStyle = FlatStyle.Flat;
+            btnSave.Font = new Font("Tahoma", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSave.ForeColor = SystemColors.ActiveCaption;
+            btnSave.Location = new Point(956, 662);
+            btnSave.Name = "btnSave";
+            btnSave.Size = new Size(144, 70);
+            btnSave.TabIndex = 73;
+            btnSave.Text = "Kaydet";
+            btnSave.UseVisualStyleBackColor = false;
+            btnSave.Click += btnSave_Click;
+            // 
             // FrmPayment
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1427, 644);
+            ClientSize = new Size(1427, 744);
+            Controls.Add(btnSave);
+            Controls.Add(label7);
+            Controls.Add(txtPaid);
+            Controls.Add(label8);
+            Controls.Add(dtDate);
+            Controls.Add(label3);
             Controls.Add(lbDiff);
             Controls.Add(label5);
             Controls.Add(lbPayment);
@@ -316,5 +383,11 @@
         private Label label4;
         private Label lbDiff;
         private Label label5;
+        private DateTimePicker dtDate;
+        private Label label3;
+        private Label label7;
+        private TextBox txtPaid;
+        private Label label8;
+        private Button btnSave;
     }
 }
