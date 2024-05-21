@@ -21,7 +21,18 @@ namespace uyg04.Forms
         private void FrmWork_Load(object sender, EventArgs e)
         {
             GetCustomerList();
+            GetWorkList();
+
             dgCustomer.Visible = false;
+        }
+        void GetWorkList()
+        {
+            var works = db.Works.ToList();
+            dgWork.Rows.Clear();
+            foreach (var work in works)
+            {
+                dgWork.Rows.Add(work.Id, work.Name, work.Customer.Name, work.Price);
+            }
         }
         void GetCustomerList()
         {
@@ -32,6 +43,7 @@ namespace uyg04.Forms
                 dgCustomer.Rows.Add(customer.Id, customer.Name, customer.Email, customer.Phone);
             }
         }
+
         private void btnSearch_Click(object sender, EventArgs e)
         {
 
@@ -91,6 +103,7 @@ namespace uyg04.Forms
                 }
 
             }
+            dgCustomer.Visible = false;
         }
     }
 }

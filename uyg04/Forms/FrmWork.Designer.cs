@@ -54,7 +54,13 @@
             dataGridViewTextBoxColumn3 = new DataGridViewTextBoxColumn();
             dataGridViewTextBoxColumn4 = new DataGridViewTextBoxColumn();
             Column5 = new DataGridViewTextBoxColumn();
+            dgWork = new DataGridView();
+            dataGridViewTextBoxColumn2 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn6 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn5 = new DataGridViewTextBoxColumn();
+            dataGridViewTextBoxColumn7 = new DataGridViewTextBoxColumn();
             ((System.ComponentModel.ISupportInitialize)dgCustomer).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dgWork).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -261,7 +267,7 @@
             dgCustomer.RowHeadersWidth = 62;
             dgCustomer.RowTemplate.Height = 33;
             dgCustomer.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgCustomer.Size = new Size(697, 412);
+            dgCustomer.Size = new Size(697, 204);
             dgCustomer.TabIndex = 55;
             dgCustomer.CellClick += dgCustomer_CellClick;
             // 
@@ -297,12 +303,60 @@
             Column5.ReadOnly = true;
             Column5.Width = 150;
             // 
+            // dgWork
+            // 
+            dgWork.AllowUserToAddRows = false;
+            dgWork.AllowUserToDeleteRows = false;
+            dgWork.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgWork.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn7 });
+            dgWork.Location = new Point(484, 283);
+            dgWork.Name = "dgWork";
+            dgWork.ReadOnly = true;
+            dgWork.RowHeadersWidth = 62;
+            dgWork.RowTemplate.Height = 33;
+            dgWork.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dgWork.Size = new Size(697, 234);
+            dgWork.TabIndex = 56;
+            // 
+            // dataGridViewTextBoxColumn2
+            // 
+            dataGridViewTextBoxColumn2.HeaderText = "Kayıt No";
+            dataGridViewTextBoxColumn2.MinimumWidth = 8;
+            dataGridViewTextBoxColumn2.Name = "dataGridViewTextBoxColumn2";
+            dataGridViewTextBoxColumn2.ReadOnly = true;
+            dataGridViewTextBoxColumn2.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn6
+            // 
+            dataGridViewTextBoxColumn6.HeaderText = "Başlık";
+            dataGridViewTextBoxColumn6.MinimumWidth = 8;
+            dataGridViewTextBoxColumn6.Name = "dataGridViewTextBoxColumn6";
+            dataGridViewTextBoxColumn6.ReadOnly = true;
+            dataGridViewTextBoxColumn6.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn5
+            // 
+            dataGridViewTextBoxColumn5.HeaderText = "Adı Soyadı";
+            dataGridViewTextBoxColumn5.MinimumWidth = 8;
+            dataGridViewTextBoxColumn5.Name = "dataGridViewTextBoxColumn5";
+            dataGridViewTextBoxColumn5.ReadOnly = true;
+            dataGridViewTextBoxColumn5.Width = 150;
+            // 
+            // dataGridViewTextBoxColumn7
+            // 
+            dataGridViewTextBoxColumn7.HeaderText = "Ücret";
+            dataGridViewTextBoxColumn7.MinimumWidth = 8;
+            dataGridViewTextBoxColumn7.Name = "dataGridViewTextBoxColumn7";
+            dataGridViewTextBoxColumn7.ReadOnly = true;
+            dataGridViewTextBoxColumn7.Width = 150;
+            // 
             // FrmWork
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = SystemColors.ActiveCaption;
             ClientSize = new Size(1232, 646);
+            Controls.Add(dgWork);
             Controls.Add(dgCustomer);
             Controls.Add(txtPhone);
             Controls.Add(label10);
@@ -331,6 +385,7 @@
             WindowState = FormWindowState.Maximized;
             Load += FrmWork_Load;
             ((System.ComponentModel.ISupportInitialize)dgCustomer).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dgWork).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -363,5 +418,10 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn3;
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn4;
         private DataGridViewTextBoxColumn Column5;
+        private DataGridView dgWork;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn2;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn6;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn5;
+        private DataGridViewTextBoxColumn dataGridViewTextBoxColumn7;
     }
 }
