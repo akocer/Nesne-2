@@ -48,15 +48,12 @@ namespace uyg04.Forms
         {
 
             dgCustomer.Visible = true;
+            dgWork.Visible = false;
         }
 
         private void dgCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
-            txtCustomerId.Text = dgCustomer.CurrentRow.Cells[0].Value.ToString();
-            txtName.Text = dgCustomer.CurrentRow.Cells[1].Value.ToString();
-            txtPhone.Text = dgCustomer.CurrentRow.Cells[3].Value.ToString();
 
-            dgCustomer.Visible = false;
         }
 
         private void btnSave_Click(object sender, EventArgs e)
@@ -104,6 +101,17 @@ namespace uyg04.Forms
 
             }
             dgCustomer.Visible = false;
+            dgWork.Visible = true;
+        }
+
+        private void dgCustomer_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
+        {
+            txtCustomerId.Text = dgCustomer.CurrentRow.Cells[0].Value.ToString();
+            txtName.Text = dgCustomer.CurrentRow.Cells[1].Value.ToString();
+            txtPhone.Text = dgCustomer.CurrentRow.Cells[3].Value.ToString();
+
+            dgCustomer.Visible = false;
+            dgWork.Visible = true;
         }
     }
 }

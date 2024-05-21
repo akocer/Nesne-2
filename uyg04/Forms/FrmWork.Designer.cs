@@ -267,9 +267,10 @@
             dgCustomer.RowHeadersWidth = 62;
             dgCustomer.RowTemplate.Height = 33;
             dgCustomer.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgCustomer.Size = new Size(697, 204);
+            dgCustomer.Size = new Size(697, 480);
             dgCustomer.TabIndex = 55;
             dgCustomer.CellClick += dgCustomer_CellClick;
+            dgCustomer.CellDoubleClick += dgCustomer_CellDoubleClick;
             // 
             // dataGridViewTextBoxColumn1
             // 
@@ -309,13 +310,13 @@
             dgWork.AllowUserToDeleteRows = false;
             dgWork.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgWork.Columns.AddRange(new DataGridViewColumn[] { dataGridViewTextBoxColumn2, dataGridViewTextBoxColumn6, dataGridViewTextBoxColumn5, dataGridViewTextBoxColumn7 });
-            dgWork.Location = new Point(484, 283);
+            dgWork.Location = new Point(523, 37);
             dgWork.Name = "dgWork";
             dgWork.ReadOnly = true;
             dgWork.RowHeadersWidth = 62;
             dgWork.RowTemplate.Height = 33;
             dgWork.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dgWork.Size = new Size(697, 234);
+            dgWork.Size = new Size(697, 480);
             dgWork.TabIndex = 56;
             // 
             // dataGridViewTextBoxColumn2
