@@ -44,6 +44,12 @@
             dataGridViewTextBoxColumn10 = new DataGridViewTextBoxColumn();
             txtSearch = new TextBox();
             label1 = new Label();
+            label2 = new Label();
+            lbWork = new Label();
+            lbPayment = new Label();
+            label4 = new Label();
+            lbDiff = new Label();
+            label5 = new Label();
             ((System.ComponentModel.ISupportInitialize)dgWork).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgCustomer).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgPayment).BeginInit();
@@ -200,11 +206,77 @@
             label1.TabIndex = 61;
             label1.Text = "Aramak için bir değer giriniz";
             // 
+            // label2
+            // 
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.Location = new Point(32, 593);
+            label2.Name = "label2";
+            label2.Size = new Size(334, 38);
+            label2.TabIndex = 62;
+            label2.Text = "Yapılan İş Toplam Ücretler";
+            // 
+            // lbWork
+            // 
+            lbWork.AutoSize = true;
+            lbWork.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lbWork.Location = new Point(372, 593);
+            lbWork.Name = "lbWork";
+            lbWork.Size = new Size(71, 38);
+            lbWork.TabIndex = 63;
+            lbWork.Text = "0 TL";
+            // 
+            // lbPayment
+            // 
+            lbPayment.AutoSize = true;
+            lbPayment.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lbPayment.Location = new Point(862, 593);
+            lbPayment.Name = "lbPayment";
+            lbPayment.Size = new Size(71, 38);
+            lbPayment.TabIndex = 65;
+            lbPayment.Text = "0 TL";
+            // 
+            // label4
+            // 
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.Location = new Point(524, 593);
+            label4.Name = "label4";
+            label4.Size = new Size(332, 38);
+            label4.TabIndex = 64;
+            label4.Text = "Yapılan Toplam Ödemeler";
+            // 
+            // lbDiff
+            // 
+            lbDiff.AutoSize = true;
+            lbDiff.Font = new Font("Segoe UI", 14F, FontStyle.Bold, GraphicsUnit.Point);
+            lbDiff.Location = new Point(1162, 593);
+            lbDiff.Name = "lbDiff";
+            lbDiff.Size = new Size(71, 38);
+            lbDiff.TabIndex = 67;
+            lbDiff.Text = "0 TL";
+            // 
+            // label5
+            // 
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 14F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.Location = new Point(1073, 593);
+            label5.Name = "label5";
+            label5.Size = new Size(68, 38);
+            label5.TabIndex = 66;
+            label5.Text = "Fark";
+            // 
             // FrmPayment
             // 
             AutoScaleDimensions = new SizeF(10F, 25F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1427, 644);
+            Controls.Add(lbDiff);
+            Controls.Add(label5);
+            Controls.Add(lbPayment);
+            Controls.Add(label4);
+            Controls.Add(lbWork);
+            Controls.Add(label2);
             Controls.Add(label1);
             Controls.Add(txtSearch);
             Controls.Add(dgPayment);
@@ -238,5 +310,11 @@
         private DataGridViewTextBoxColumn dataGridViewTextBoxColumn10;
         private TextBox txtSearch;
         private Label label1;
+        private Label label2;
+        private Label lbWork;
+        private Label lbPayment;
+        private Label label4;
+        private Label lbDiff;
+        private Label label5;
     }
 }

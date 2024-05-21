@@ -30,6 +30,7 @@ namespace uyg04.Forms
             {
                 dgCustomer.Rows.Add(customer.Id, customer.Name, customer.Email, customer.Phone);
             }
+
         }
         void GetWorkList(int customerId)
         {
@@ -39,6 +40,7 @@ namespace uyg04.Forms
             {
                 dgWork.Rows.Add(work.Id, work.Name, work.CreateDate.ToShortDateString(), work.Price);
             }
+            Calculate();
         }
         void GetPaymentList(int customerId)
         {
@@ -48,6 +50,7 @@ namespace uyg04.Forms
             {
                 dgPayment.Rows.Add(payment.Id, payment.CreateDate.ToShortDateString(), payment.Paid);
             }
+            Calculate();
         }
         private void dgCustomer_CellClick(object sender, DataGridViewCellEventArgs e)
         {
@@ -59,6 +62,34 @@ namespace uyg04.Forms
         private void txtSearch_TextChanged(object sender, EventArgs e)
         {
             GetCustomerList(txtSearch.Text);
+        }
+
+        void Calculate()
+        {
+            double prices = 0;
+            for (int i = 0; i < dgWork.Rows.Count; i++)
+            {
+                prices += Convert.ToDouble(dgWork.Rows[i].Cells[3].Value.ToString());
+            }
+            lbWork.Text = prices.ToString("0.00 TL");
+
+            double paids = 0;
+            for (int i = 0; i < dgPayment.Rows.Count; i++)
+            {
+                paids += Convert.ToDouble(dgPayment.Rows[i].Cells[2].Value.ToString());
+            }
+            lbPayment.Text = paids.ToString("0.00 TL");
+
+            double diff = paids - prices;
+            lbDiff.Text = diff.ToString("0.00 TL");
+            if (diff < 0)
+            {
+                lbDiff.ForeColor = Color.Red;
+            }
+            else
+            {
+                lbDiff.ForeColor = Color.Green;
+            }
         }
     }
 }
